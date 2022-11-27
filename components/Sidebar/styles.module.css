@@ -1,0 +1,148 @@
+.wrapper {
+  width: 300px;
+  min-width: 300px;
+  height: 100vh;
+  position: relative;
+  background: var(--bg-secondary);
+}
+
+.logo {
+  padding: 32px 34px;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--medium-grey);
+  margin: 20px 0 19px 32px;
+  letter-spacing: 2.4px;
+}
+
+.boards {
+  max-width: 276px;
+}
+
+.boards a,
+.btn {
+  display: block;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 14.5px 32px;
+  border: 0;
+  background: none;
+  color: var(--medium-grey);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 0px 100px 100px 0px;
+  gap: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn {
+  color: var(--main-purple);
+}
+.btn svg path {
+  fill: var(--main-purple);
+}
+
+.boards a:hover {
+  background: var(--primary-hover);
+  color: var(--main-purple);
+}
+
+.boards a:hover svg path {
+  fill: var(--main-purple);
+}
+
+.boards a.active,
+.boards a.active:hover {
+  background: var(--main-purple);
+  color: #fff;
+}
+
+.boards a.active svg path,
+.boards a.active:hover svg path {
+  fill: #fff;
+}
+
+.bottomSection {
+  position: absolute;
+  bottom: 32px;
+  width: 100%;
+}
+
+.themeSwitcher {
+  width: calc(100% - 49px);
+  height: 48px;
+  margin: 0px 24px;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  border-radius: 6px;
+}
+
+.hideBtn {
+  border: 0;
+  background: 0;
+  display: block;
+  width: calc(100% - 24px);
+  display: flex;
+  align-items: center;
+  padding: 14.5px 32px;
+  margin-top: 8px;
+  border: 0;
+  background: none;
+  color: var(--medium-grey);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 0px 100px 100px 0px;
+  gap: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hideBtn:hover {
+  background: var(--primary-hover);
+  color: var(--main-purple);
+}
+
+.hideBtn:hover svg path {
+  fill: var(--main-purple);
+}
+
+.toggleSwitch {
+  border: 0;
+  display: block;
+  width: 40px;
+  height: 20px;
+  background: var(--main-purple);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggleSwitch::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: var(--white);
+  border-radius: 50%;
+  top: 2.5px;
+  transform: translateX(-16px);
+  transition: transform ease-in 0.05s;
+}
+
+.light:before {
+  transform: translateX(-16px);
+}
+.dark:before {
+  transform: translateX(2px);
+}
