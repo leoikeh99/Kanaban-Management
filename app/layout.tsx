@@ -1,5 +1,6 @@
 import "./globalStyles.css";
 import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
 
 export default function RootLayout({
   children,
@@ -10,8 +11,11 @@ export default function RootLayout({
     <html lang="en" className="light">
       <head />
       <body>
-        <Sidebar />
-        <main>{children}</main>
+        <Header />
+        <div className="layout">
+          <Sidebar />
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );

@@ -1,12 +1,9 @@
 :root {
   --main-purple: #635fc7;
   --main-purple-opacity: rgb(99, 95, 199, 0.1);
-  --main-purple-hover: #a8a4ff;
   --black: #000112;
   --very-dark-grey: #20212c;
   --dark-grey: #2b2c37;
-  --lines-dark: #3e3f4e;
-  --lines-dark: #e4ebfa;
   --medium-grey: #828fa3;
   --light-grey: #f4f7fd;
   --white: #ffffff;
@@ -16,20 +13,24 @@
 
 html.light {
   --text: #000112;
+  --main-purple-hover: #a8a4ff;
   --bg-primary: #f4f7fd;
   --primary-hover: rgb(99, 95, 199, 0.1);
   --bg-secondary: #ffffff;
   --btn-secondary: rgb(99, 95, 199, 0.1);
   --btn-secondary-hover: rgb(99, 95, 199, 0.25);
+  --lines-dark: #e4ebfa;
 }
 
 html.dark {
   --text: #ffffff;
+  --main-purple-hover: #635fc7;
   --bg-primary: #20212c;
   --primary-hover: #ffffff;
   --bg-secondary: #2b2c37;
   --btn-secondary: #ffffff;
   --btn-secondary-hover: #ffffff;
+  --lines-dark: #3e3f4e;
 }
 
 html,
@@ -38,7 +39,6 @@ body {
   margin: 0;
   background: var(--bg-primary);
   font-family: "Plus Jakarta Sans", sans-serif;
-  display: flex;
 }
 
 * {
@@ -46,6 +46,11 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color ease-in 0.05s;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.layout {
+  display: flex;
 }
 
 @media (prefers-reduced-motion: reduce) {
