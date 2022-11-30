@@ -1,3 +1,7 @@
+.dropDownWrapper {
+  position: relative;
+}
+
 .dropDown {
   border: 1px solid var(--lines-grey);
   width: 100%;
@@ -11,4 +15,31 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+}
+
+.dropDownList {
+  width: 100%;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 16px;
+  position: absolute;
+  top: 48px;
+  left: 0;
+}
+
+.dropDownItem {
+  border: 0;
+  background: transparent;
+  width: 100%;
+  color: var(--medium-grey);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-align: left;
+  line-height: 23px;
+  cursor: pointer;
+}
+
+.dropDownItem:last-child {
+  margin-bottom: 0;
 }

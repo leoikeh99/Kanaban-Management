@@ -87,3 +87,28 @@
 .subTask button.completed {
   background-color: var(--main-purple);
 }
+
+.boardActions {
+  width: 192px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  position: absolute;
+  top: 93px;
+  right: 24px;
+}
+
+.boardActions button {
+  padding: 16px;
+  color: var(--medium-grey);
+  font-weight: 500;
+  font-size: 13px;
+  background: transparent;
+  width: 100%;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.boardActions button:last-child {
+  color: var(--red);
+}
