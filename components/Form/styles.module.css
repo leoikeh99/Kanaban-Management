@@ -1,0 +1,14 @@
+.dropDown {
+  border: 1px solid var(--lines-grey);
+  width: 100%;
+  padding: 9px 16px;
+  background: transparent;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}

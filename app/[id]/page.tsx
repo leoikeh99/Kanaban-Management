@@ -1,7 +1,12 @@
 import React from "react";
+import Board from "./Board";
 
 const BoardPage = () => {
-  return <div></div>;
+  return (
+    <>
+      <Board />
+    </>
+  );
 };
 
 export default BoardPage;

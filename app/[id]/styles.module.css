@@ -1,4 +1,13 @@
 .wrapper {
   margin-top: 97px;
+  width: calc(100vw - 300px);
+}
+
+.board {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
   width: 100%;
+  height: calc(100vh - 97px);
+  padding: 24px 48px;
 }

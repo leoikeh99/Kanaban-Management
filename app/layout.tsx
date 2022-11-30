@@ -1,6 +1,7 @@
 import "./globalStyles.css";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
+import { ModalProvider } from "../context/ModalContext";
 
 export default function RootLayout({
   children,
@@ -11,11 +12,13 @@ export default function RootLayout({
     <html lang="en" className="light">
       <head />
       <body>
-        <Header />
-        <div className="layout">
-          <Sidebar />
-          <main>{children}</main>
-        </div>
+        <ModalProvider>
+          <Header />
+          <div className="layout">
+            <Sidebar />
+            <main>{children}</main>
+          </div>
+        </ModalProvider>
       </body>
     </html>
   );

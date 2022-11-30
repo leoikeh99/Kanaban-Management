@@ -1,0 +1,50 @@
+.column {
+  min-width: 280px;
+  max-width: 280px;
+}
+
+.column h5 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--medium-grey);
+  letter-spacing: 2.4px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.column h5::before {
+  content: "";
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #49c4e5;
+}
+
+.task {
+  color: var(--text);
+  border: 0;
+  background: var(--bg-secondary);
+  padding: 23px 16px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  text-align: left;
+  min-width: 280px;
+  max-width: 280px;
+  cursor: pointer;
+}
+
+.task h6 {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.task p {
+  color: var(--medium-grey);
+  font-weight: 700;
+  font-size: 12px;
+}

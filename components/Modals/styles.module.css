@@ -1,0 +1,89 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #000;
+  opacity: 0.5;
+}
+
+.modalWrapper {
+  height: fit-content;
+  width: 480px;
+  background: var(--bg-secondary);
+  border-radius: 6px;
+  padding: 32px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.modalWrapper h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  max-width: 387px;
+  margin-bottom: 24px;
+}
+
+.desc {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--medium-grey);
+  line-height: 23px;
+  margin-bottom: 24px;
+}
+
+.subTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--medium-grey);
+}
+
+.subTasks {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.subTask {
+  padding: 17px 16px;
+  background: var(--bg-primary);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.subTask p {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 15px;
+}
+
+.subTask p.completed {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.subTask button {
+  height: 16px;
+  width: 16px;
+  min-width: 16px;
+  border-radius: 2px;
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid var(--lines-grey);
+}
+
+.subTask button.completed {
+  background-color: var(--main-purple);
+}
