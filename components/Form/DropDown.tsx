@@ -9,16 +9,15 @@ const DropDown = () => {
 
   return (
     <div className={styles.dropDownWrapper}>
-      <button className={styles.dropDown} onClick={() => setOpen(!open)}>
-        Doing {open ? <ChevronDown /> : <ChevronUp />}
-      </button>
-      {open && (
-        <div className={styles.dropDownList}>
-          <button className={styles.dropDownItem}>Todo</button>
-          <button className={styles.dropDownItem}>Doing</button>
-          <button className={styles.dropDownItem}>Done</button>
-        </div>
-      )}
+      {!open ? <ChevronDown /> : <ChevronUp />}
+      <select onClick={() => setOpen(!open)}>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="opel" selected>
+          Opel
+        </option>
+        <option value="audi">Audi</option>
+      </select>
     </div>
   );
 };

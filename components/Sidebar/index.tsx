@@ -1,15 +1,17 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
-import BoardIcon from "../../public/assets/icon-board.svg";
-import HideIcon from "../../public/assets/icon-hide-sidebar.svg";
-import IconLight from "../../public/assets/icon-light-theme.svg";
-import IconDark from "../../public/assets/icon-dark-theme.svg";
+import BoardIcon from "@/public/assets/icon-board.svg";
+import HideIcon from "@/public/assets/icon-hide-sidebar.svg";
+import IconLight from "@/public/assets/icon-light-theme.svg";
+import IconDark from "@/public/assets/icon-dark-theme.svg";
 import Link from "next/link";
+import ModalContext from "@/context/ModalContext";
 
 const Sidebar = () => {
   const [theme, setTheme] = useState("light");
+  const { toggleModal } = useContext(ModalContext);
 
   const switchTheme = () => {
     if (theme === "light") {
@@ -43,19 +45,19 @@ const Sidebar = () => {
       </div>
       <p className={styles.title}>ALL BOARDS (3)</p>
       <div className={styles.boards}>
-        <Link href="/" className={`${styles.active}`}>
+        <Link href="/1" className={`${styles.active}`}>
           <BoardIcon />
           Platform Launch
         </Link>
-        <Link href="/">
+        <Link href="/1">
           <BoardIcon />
           Marketing Plan
         </Link>
-        <Link href="/">
+        <Link href="/1">
           <BoardIcon />
           Roadmap
         </Link>
-        <button className={styles.btn}>
+        <button className={styles.btn} onClick={() => toggleModal("Add Board")}>
           <BoardIcon />+ Create New Board
         </button>
       </div>

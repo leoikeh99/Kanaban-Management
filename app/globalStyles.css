@@ -1,10 +1,13 @@
 :root {
   --main-purple: #635fc7;
+  --main-purple-hover: #a8a4ff;
   --main-purple-opacity: rgb(99, 95, 199, 0.1);
+  --main-purple-opacity-2: rgb(99, 95, 199, 0.25);
   --black: #000112;
   --very-dark-grey: #20212c;
   --dark-grey: #2b2c37;
   --medium-grey: #828fa3;
+  --medium-grey-opacity: rgba(130, 143, 163, 0.25);
   --light-grey: #f4f7fd;
   --white: #ffffff;
   --red: #ea5555;
@@ -14,7 +17,6 @@
 
 html.light {
   --text: #000112;
-  --main-purple-hover: #a8a4ff;
   --bg-primary: #f4f7fd;
   --primary-hover: rgb(99, 95, 199, 0.1);
   --bg-secondary: #ffffff;
@@ -22,11 +24,11 @@ html.light {
   --btn-secondary-hover: rgb(99, 95, 199, 0.25);
   --lines-dark: #e4ebfa;
   --box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.101545);
+  --label: var(--medium-grey);
 }
 
 html.dark {
   --text: #ffffff;
-  --main-purple-hover: #635fc7;
   --bg-primary: #20212c;
   --primary-hover: #ffffff;
   --bg-secondary: #2b2c37;
@@ -34,6 +36,7 @@ html.dark {
   --btn-secondary-hover: #ffffff;
   --lines-dark: #3e3f4e;
   --box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.101545);
+  --label: var(--text);
 }
 
 html,

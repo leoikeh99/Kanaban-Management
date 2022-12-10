@@ -30,6 +30,12 @@
   height: 100vh;
 }
 
+.modalWrapper {
+  position: absolute;
+  top: 93px;
+  right: 24px;
+}
+
 .button {
   padding: 14px 24px;
   border: none;

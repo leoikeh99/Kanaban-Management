@@ -1,13 +1,13 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./styles.module.css";
-import Ellipsis from "../../public/assets/icon-vertical-ellipsis.svg";
-import ModalContext from "../../context/ModalContext";
-import AddTask from "../Modals/AddTask";
-import BoardActions from "../Modals/BoardActions";
+import Ellipsis from "@/public/assets/icon-vertical-ellipsis.svg";
+import ModalContext from "@/context/ModalContext";
+import BoardActions from "../Modals/mini/BoardActions";
 
 function Header() {
-  const { activeModal, toggleModal } = useContext(ModalContext);
+  const { toggleModal } = useContext(ModalContext);
+  const [show, setShow] = useState(false);
 
   return (
     <header className={styles.header}>
@@ -22,20 +22,21 @@ function Header() {
           <button
             style={{ padding: "7px" }}
             className={styles.emptyButton}
-            onClick={() => toggleModal("Board Actions")}>
+            onClick={() => setShow(!show)}>
             <Ellipsis />
           </button>
         </div>
-        {activeModal === "Board Actions" && (
+        {show && (
           <>
             <div
               className={styles.modalOverlay}
-              onClick={() => toggleModal(null)}
+              onClick={() => setShow(false)}
             />
-            <BoardActions />
+            <div className={styles.modalWrapper}>
+              <BoardActions />
+            </div>
           </>
         )}
-        {activeModal === "Add Task" && <AddTask />}
       </div>
     </header>
   );

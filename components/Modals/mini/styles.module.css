@@ -1,0 +1,23 @@
+.miniModal {
+  width: 192px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.miniModal button {
+  color: var(--medium-grey);
+  font-weight: 500;
+  font-size: 13px;
+  background: transparent;
+  width: 100%;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.miniModal button:last-child {
+  color: var(--red);
+  margin-bottom: 0;
+}

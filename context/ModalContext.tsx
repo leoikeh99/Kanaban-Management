@@ -1,7 +1,15 @@
 "use client";
 import React, { useState, createContext } from "react";
 
-type ModalTypes = null | "Add Task" | "Edit Task" | "Board Actions";
+type ModalTypes =
+  | null
+  | "View Task"
+  | "Add Task"
+  | "Edit Task"
+  | "Add Board"
+  | "Edit Board"
+  | "Delete Task"
+  | "Delete Board";
 
 type ModalContextState = {
   activeModal: ModalTypes;
@@ -21,7 +29,9 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
   );
 
   const toggleModal = (modalName: ModalTypes) =>
-    activeModal ? setActiveModal(null) : setActiveModal(modalName);
+    activeModal === modalName
+      ? setActiveModal(null)
+      : setActiveModal(modalName);
 
   return (
     <ModalContext.Provider
