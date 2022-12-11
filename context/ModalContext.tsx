@@ -9,7 +9,9 @@ type ModalTypes =
   | "Add Board"
   | "Edit Board"
   | "Delete Task"
-  | "Delete Board";
+  | "Delete Board"
+  | "Login"
+  | "Register";
 
 type ModalContextState = {
   activeModal: ModalTypes;

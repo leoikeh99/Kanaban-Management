@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext } from "react";
 import styles from "../styles.module.css";
-import formStyles from "../formStyles.module.css";
+import formStyles from "@/styles/formStyles.module.css";
 import ModalContext from "@/context/ModalContext";
 
 const DeleteTask = () => {

@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import ModalContext from "@/context/ModalContext";
 import IconCross from "@/public/assets/icon-cross.svg";
 import styles from "../styles.module.css";
-import formStyles from "../formStyles.module.css";
+import formStyles from "@/styles/formStyles.module.css";
 
 const AddBoard = () => {
   const { toggleModal } = useContext(ModalContext);

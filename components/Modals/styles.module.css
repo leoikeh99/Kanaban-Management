@@ -45,6 +45,10 @@ h3.danger {
   color: var(--red);
 }
 
+.logo {
+  margin-bottom: 15px;
+}
+
 .modalTop {
   display: flex;
   align-items: center;

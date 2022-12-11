@@ -10,6 +10,8 @@ import AddBoard from "@/components/Modals/Board/AddBoard";
 import EditBoard from "@/components/Modals/Board/EditBoard";
 import DeleteTask from "@/components/Modals/Task/DeleteTask";
 import DeleteBoard from "@/components/Modals/Board/DeleteBoard";
+import Login from "@/components/Modals/Auth/Login";
+import Register from "@/components/Modals/Auth/Register";
 
 const Board = () => {
   const { activeModal } = useContext(ModalContext);
@@ -25,6 +27,8 @@ const Board = () => {
       {activeModal === "Edit Board" && <EditBoard />}
       {activeModal === "Delete Task" && <DeleteTask />}
       {activeModal === "Delete Board" && <DeleteBoard />}
+      {activeModal === "Login" && <Login />}
+      {activeModal === "Register" && <Register />}
     </div>
   );
 };

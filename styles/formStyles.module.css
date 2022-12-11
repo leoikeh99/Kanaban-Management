@@ -72,3 +72,21 @@
 .danger:hover {
   background: var(--red-hover);
 }
+
+.form small {
+  color: var(--medium-grey);
+  font-weight: 500;
+  font-size: 12px;
+  display: block;
+  margin-top: -20px;
+  margin-bottom: 24px;
+}
+
+.form small button {
+  color: var(--main-purple);
+  font-weight: 500;
+  font-size: 12px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}

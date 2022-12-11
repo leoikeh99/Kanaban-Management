@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import BoardIcon from "@/public/assets/icon-board.svg";
@@ -8,29 +8,12 @@ import IconLight from "@/public/assets/icon-light-theme.svg";
 import IconDark from "@/public/assets/icon-dark-theme.svg";
 import Link from "next/link";
 import ModalContext from "@/context/ModalContext";
+import AuthHandler from "../Auth/AuthHandler";
+import SettingsContext from "@/context/SettingsContext";
 
 const Sidebar = () => {
-  const [theme, setTheme] = useState("light");
   const { toggleModal } = useContext(ModalContext);
-
-  const switchTheme = () => {
-    if (theme === "light") {
-      localStorage.setItem("theme", "dark");
-      setTheme("dark");
-      document.documentElement.className = "dark";
-    }
-    if (theme === "dark") {
-      localStorage.setItem("theme", "light");
-      setTheme("light");
-      document.documentElement.className = "light";
-    }
-  };
-
-  useEffect(() => {
-    const getTheme = localStorage.getItem("theme");
-    document.documentElement.className = getTheme ? getTheme : "light";
-    setTheme(getTheme ? getTheme : "light");
-  }, []);
+  const { theme, toggleTheme } = useContext(SettingsContext);
 
   return (
     <div className={styles.wrapper}>
@@ -62,13 +45,14 @@ const Sidebar = () => {
         </button>
       </div>
       <div className={styles.bottomSection}>
+        <AuthHandler />
         <div className={styles.themeSwitcher}>
           <IconLight />
           <button
             className={`${styles.toggleSwitch} ${
               theme === "light" ? styles.light : styles.dark
             }`}
-            onClick={switchTheme}
+            onClick={() => toggleTheme()}
           />
           <IconDark />
         </div>
