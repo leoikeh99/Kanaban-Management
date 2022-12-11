@@ -2,11 +2,21 @@
   width: 300px;
   min-width: 300px;
   height: 100vh;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   background: var(--bg-secondary);
   border-right: 1px solid var(--lines-dark);
-  position: relative;
   z-index: 1;
+  transition: transform ease-in 0.1s;
+}
+
+.hidden {
+  transform: translateX(-300px);
+}
+
+.hidden .showBtn {
+  transform: translateX(300px);
 }
 
 .logo {
@@ -119,6 +129,31 @@
   fill: var(--main-purple);
 }
 
+.showBtn {
+  height: 48px;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: var(--main-purple);
+  border-radius: 0 100px 100px 0;
+  cursor: pointer;
+  position: fixed;
+  bottom: 32px;
+  left: 0;
+  z-index: 0;
+  animation: 0.2s ease-in fadeIn forwards;
+}
+
+.showBtn:hover {
+  background: var(--main-purple-hover);
+}
+
+.showBtn svg path {
+  fill: var(--white);
+}
+
 .toggleSwitch {
   border: 0;
   display: block;
@@ -148,4 +183,16 @@
 }
 .dark:before {
   transform: translateX(2px);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

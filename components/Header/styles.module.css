@@ -5,7 +5,16 @@
   top: 0;
   right: 0;
   background: var(--bg-secondary);
-  z-index: 2;
+  z-index: 0;
+  transition: width 0.1s ease-in;
+}
+
+.full {
+  width: 100%;
+}
+
+.full .leftSide {
+  animation: 0.2s ease-in slideRight forwards;
 }
 
 .header h1 {
@@ -61,4 +70,35 @@
   display: flex;
   align-items: center;
   gap: 17px;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  gap: 65px;
+  position: relative;
+  right: 200px;
+}
+
+.full .leftSide::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 220px;
+  bottom: -38px;
+  width: 1px;
+  height: 96px;
+  background: var(--lines-dark);
+}
+
+@keyframes slideRight {
+  0% {
+    right: 200px;
+  }
+  50% {
+    right: 200px;
+  }
+  100% {
+    right: 0;
+  }
 }

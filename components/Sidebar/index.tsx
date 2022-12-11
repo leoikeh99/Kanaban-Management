@@ -13,10 +13,11 @@ import SettingsContext from "@/context/SettingsContext";
 
 const Sidebar = () => {
   const { toggleModal } = useContext(ModalContext);
-  const { theme, toggleTheme } = useContext(SettingsContext);
+  const { theme, hideSidebar, toggleTheme, toggleSidebar } =
+    useContext(SettingsContext);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${hideSidebar && styles.hidden}`}>
       <div className={styles.logo}>
         <Image
           priority
@@ -56,9 +57,14 @@ const Sidebar = () => {
           />
           <IconDark />
         </div>
-        <button className={styles.hideBtn}>
+        <button className={styles.hideBtn} onClick={() => toggleSidebar()}>
           <HideIcon /> Hide Sidebar
         </button>
+        {hideSidebar && (
+          <button className={styles.showBtn} onClick={() => toggleSidebar()}>
+            <HideIcon />
+          </button>
+        )}
       </div>
     </div>
   );

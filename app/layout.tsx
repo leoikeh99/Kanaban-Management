@@ -16,10 +16,8 @@ export default function RootLayout({
         <SettingsProvider>
           <ModalProvider>
             <Header />
-            <div className="layout">
-              <Sidebar />
-              <main>{children}</main>
-            </div>
+            <Sidebar />
+            <main>{children}</main>
           </ModalProvider>
         </SettingsProvider>
       </body>
