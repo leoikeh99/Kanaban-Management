@@ -15,11 +15,13 @@ type ModalTypes =
 
 type ModalContextState = {
   activeModal: ModalTypes;
+  modalData: any;
   toggleModal: Function;
 };
 
 const contextDefaultValues: ModalContextState = {
   activeModal: null,
+  modalData: null,
   toggleModal: () => {},
 };
 
@@ -29,16 +31,18 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
   const [activeModal, setActiveModal] = useState(
     contextDefaultValues.activeModal
   );
+  const [modalData, setModalData] = useState(contextDefaultValues.modalData);
 
-  const toggleModal = (modalName: ModalTypes) =>
-    activeModal === modalName
-      ? setActiveModal(null)
-      : setActiveModal(modalName);
+  const toggleModal = (modalName: ModalTypes, modalData: any = null) => {
+    setActiveModal(modalName);
+    setModalData(modalData);
+  };
 
   return (
     <ModalContext.Provider
       value={{
         activeModal,
+        modalData,
         toggleModal,
       }}>
       {children}

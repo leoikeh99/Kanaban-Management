@@ -1,0 +1,147 @@
+.wrapper {
+  margin-top: 97px;
+  margin-left: 300px;
+  width: calc(100vw - 300px);
+  overflow: hidden;
+  transition: width 0.1s ease-in, margin 0.1s ease-in;
+}
+
+.board {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  width: 100%;
+  height: calc(100vh - 97px);
+  padding: 24px 48px;
+}
+
+.emptyBoard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 97px);
+}
+
+.emptyBoard p {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--medium-grey);
+}
+
+.full {
+  margin-left: 0;
+  width: 100%;
+}
+
+.addColumn {
+  min-width: 280px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--medium-grey);
+  border: 0;
+  border-radius: 6px;
+  background: var(--bg-primary2);
+  cursor: pointer;
+}
+
+.title {
+  height: 25px;
+  width: 100px;
+  margin-bottom: 24px;
+  display: block;
+  animation: skeletonLoad 1s infinite alternate;
+}
+
+.firstCol,
+.secondCol,
+.thirdCol {
+  width: fit-content;
+}
+
+.skeleton {
+  border-radius: 8px;
+  min-width: 280px;
+  max-width: 280px;
+  height: 120px;
+  margin-bottom: 20px;
+  animation: skeletonLoad 1s infinite alternate;
+}
+
+@media (max-width: 1250px) {
+  .thirdCol {
+    display: none;
+  }
+  .thirdCol.full {
+    display: block;
+  }
+}
+
+@media (max-width: 952px) {
+  .thirdCol.full {
+    display: none;
+  }
+  .secondCol {
+    display: none;
+  }
+  .secondCol.full {
+    display: block;
+  }
+}
+
+@media (max-width: 650px) {
+  .secondCol.full {
+    display: none;
+  }
+}
+
+@media (max-width: 782px) {
+  .wrapper {
+    width: calc(100vw - 261px);
+    margin-left: 261px;
+    margin-top: 81px;
+  }
+  .board {
+    height: calc(100vh - 81px);
+    padding: 23px;
+  }
+  .full {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 30px;
+}
+
+.error h3 {
+  font-size: 32px;
+}
+
+.error p {
+  font-size: 24px;
+  max-width: 500px;
+  text-align: center;
+}
+
+@media (max-width: 685px) {
+  .wrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@keyframes skeletonLoad {
+  0% {
+    background: var(--skeletonInit);
+  }
+  100% {
+    background: var(--skeletonEnd);
+  }
+}

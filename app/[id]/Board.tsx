@@ -1,35 +1,46 @@
 "use client";
-import React, { useContext } from "react";
-import styles from "./styles.module.css";
+import React, { useContext, useEffect, useState } from "react";
+import styles from "../styles.module.css";
 import Column from "@/components/Board/Column";
-import AddTask from "@/components/Modals/Task/AddTask";
-import ViewTask from "@/components/Modals/Task/ViewTask";
-import EditTask from "@/components/Modals/Task/EditTask";
+import ShowBoardModals from "@/components/Modals/ShowBoardModals";
 import ModalContext from "@/context/ModalContext";
-import AddBoard from "@/components/Modals/Board/AddBoard";
-import EditBoard from "@/components/Modals/Board/EditBoard";
-import DeleteTask from "@/components/Modals/Task/DeleteTask";
-import DeleteBoard from "@/components/Modals/Board/DeleteBoard";
-import Login from "@/components/Modals/Auth/Login";
-import Register from "@/components/Modals/Auth/Register";
+import UserContext from "@/context/UserContext";
+import BoardEmpty from "./BoardEmpty";
 
-const Board = () => {
-  const { activeModal } = useContext(ModalContext);
+const Board = ({ board }: BoardPage) => {
+  const { toggleModal } = useContext(ModalContext);
+  const { changeCurrentBoard, currentBoard } = useContext(UserContext);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    changeCurrentBoard(board);
+    setShow(true);
+  }, []);
+
   return (
-    <div className={styles.board}>
-      <Column />
-      <Column />
-      <Column />
-      {activeModal === "View Task" && <ViewTask />}
-      {activeModal === "Add Task" && <AddTask />}
-      {activeModal === "Edit Task" && <EditTask />}
-      {activeModal === "Add Board" && <AddBoard />}
-      {activeModal === "Edit Board" && <EditBoard />}
-      {activeModal === "Delete Task" && <DeleteTask />}
-      {activeModal === "Delete Board" && <DeleteBoard />}
-      {activeModal === "Login" && <Login />}
-      {activeModal === "Register" && <Register />}
-    </div>
+    <>
+      {show && currentBoard && (
+        <>
+          {currentBoard.Status.length !== 0 ? (
+            <div className={styles.board}>
+              {currentBoard.Status.sort((a, b) => a.order - b.order).map(
+                (status, index) => (
+                  <Column key={status.id} status={status} index={index} />
+                )
+              )}
+              <button
+                className={styles.addColumn}
+                onClick={() => toggleModal("Edit Board")}>
+                + New Column
+              </button>
+            </div>
+          ) : (
+            <BoardEmpty />
+          )}
+          <ShowBoardModals />
+        </>
+      )}
+    </>
   );
 };
 

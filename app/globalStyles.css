@@ -18,6 +18,11 @@
 html.light {
   --text: #000112;
   --bg-primary: #f4f7fd;
+  --bg-primary2: linear-gradient(
+    180deg,
+    #e9effa 0%,
+    rgba(233, 239, 250, 0.5) 100%
+  );
   --primary-hover: rgb(99, 95, 199, 0.1);
   --bg-secondary: #ffffff;
   --btn-secondary: rgb(99, 95, 199, 0.1);
@@ -25,11 +30,19 @@ html.light {
   --lines-dark: #e4ebfa;
   --box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.101545);
   --label: var(--medium-grey);
+  --skeletonInit: rgb(163, 184, 194);
+  --skeletonEnd: rgb(163, 184, 194, 0.2);
+  --dragOver: #eee;
 }
 
 html.dark {
   --text: #ffffff;
   --bg-primary: #20212c;
+  --bg-primary2: linear-gradient(
+    180deg,
+    rgba(43, 44, 55, 0.25) 0%,
+    rgba(43, 44, 55, 0.125) 100%
+  );
   --primary-hover: #ffffff;
   --bg-secondary: #2b2c37;
   --btn-secondary: #ffffff;
@@ -37,6 +50,9 @@ html.dark {
   --lines-dark: #3e3f4e;
   --box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.101545);
   --label: var(--text);
+  --skeletonInit: rgba(43, 44, 55, 1);
+  --skeletonEnd: rgba(43, 44, 55, 0.1);
+  --dragOver: #30313f;
 }
 
 html,

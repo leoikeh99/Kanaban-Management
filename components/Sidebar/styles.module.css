@@ -32,7 +32,7 @@
 }
 
 .boards {
-  max-width: 276px;
+  max-width: 92%;
 }
 
 .boards a,
@@ -52,6 +52,9 @@
   gap: 16px;
   cursor: pointer;
   text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn {
@@ -185,6 +188,39 @@
   transform: translateX(2px);
 }
 
+.skeleton {
+  opacity: 0.7;
+  animation: skeletonLoad 1s linear infinite alternate;
+}
+
+.skeletonText {
+  height: 1.1rem;
+  width: 100%;
+}
+
+@media (max-width: 782px) {
+  .wrapper {
+    width: 261px;
+    min-width: 261px;
+  }
+
+  .boards a,
+  .btn {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 685px) {
+  .wrapper {
+    display: none;
+  }
+
+  .boards a,
+  .btn {
+    padding: 14.5px 24px;
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -194,5 +230,14 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes skeletonLoad {
+  0% {
+    background: hsl(200, 20%, 70%);
+  }
+  100% {
+    background: hsl(200, 20%, 95%);
   }
 }

@@ -31,8 +31,53 @@
   opacity: 0.25;
 }
 
+.subTaskInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 12px;
+  gap: 16px;
+}
+
+.subTaskInput button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
 .formGroup {
   margin-bottom: 24px;
+  display: block;
+  position: relative;
+}
+
+.formGroup span.error,
+.subTaskInput.subtaskError span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--red);
+  position: absolute;
+  top: 34px;
+  right: 16px;
+}
+
+.subTaskInput span {
+  display: none;
+}
+
+.subTaskInput.subtaskError span {
+  top: 11px;
+  right: 48px;
+  display: block;
+}
+
+.subTaskInput.subtaskError button svg path {
+  fill: var(--red);
+}
+
+input.error {
+  border-color: var(--red);
 }
 
 .btn {
@@ -44,6 +89,11 @@
   border-radius: 20px;
   border: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
 }
 
 .primary {

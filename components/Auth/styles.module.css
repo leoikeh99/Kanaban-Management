@@ -2,3 +2,59 @@
   margin-bottom: 8px;
   padding: 0 24px;
 }
+
+.authenticated {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.authenticated img {
+  display: block;
+  border-radius: 50%;
+  border: 2px solid var(--main-purple);
+}
+
+.authenticated p {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.authenticated button {
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  padding: 2px 15px;
+  border-radius: 4px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.unauthenticated {
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.unauthenticated .inner {
+  max-width: 700px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.unauthenticated h1 {
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.unauthenticated p {
+  max-width: 600px;
+  margin-bottom: 16px;
+  color: var(--text);
+}

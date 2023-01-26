@@ -1,6 +1,7 @@
 .column {
   min-width: 280px;
   max-width: 280px;
+  height: 100%;
 }
 
 .column h5 {
@@ -15,12 +16,11 @@
   margin-bottom: 24px;
 }
 
-.column h5::before {
+.column h5 span {
   content: "";
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  background: #49c4e5;
 }
 
 .task {
@@ -33,6 +33,7 @@
   text-align: left;
   min-width: 280px;
   max-width: 280px;
+  margin-bottom: 20px;
   cursor: pointer;
 }
 
@@ -47,4 +48,53 @@
   color: var(--medium-grey);
   font-weight: 700;
   font-size: 12px;
+}
+
+.noBoards {
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.noBoards .inner {
+  max-width: 700px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.noBoards h1 {
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.noBoards p {
+  max-width: 600px;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.bottomDrop {
+  width: 100%;
+  height: 120px;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--medium-grey);
+  font-size: 20px;
+  border-radius: 8px;
+  opacity: 0;
+}
+
+.dragOver {
+  background: var(--dragOver);
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
 }

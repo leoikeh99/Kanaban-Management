@@ -1,23 +1,37 @@
 "use client";
-import React, { useState } from "react";
+import UserContext from "@/context/UserContext";
+import React, { useContext, useState } from "react";
 import ChevronDown from "../../public/assets/icon-chevron-down.svg";
 import ChevronUp from "../../public/assets/icon-chevron-up.svg";
 import styles from "./styles.module.css";
 
-const DropDown = () => {
+type Props = {
+  selectedStatus: string | undefined;
+  handleChange: React.ChangeEventHandler<HTMLSelectElement>;
+};
+
+const DropDown = ({ selectedStatus, handleChange }: Props) => {
   const [open, setOpen] = useState(false);
+  const { currentBoard } = useContext(UserContext);
 
   return (
     <div className={styles.dropDownWrapper}>
       {!open ? <ChevronDown /> : <ChevronUp />}
-      <select onClick={() => setOpen(!open)}>
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="opel" selected>
-          Opel
-        </option>
-        <option value="audi">Audi</option>
-      </select>
+      {currentBoard && (
+        <select
+          name="statusId"
+          onClick={() => setOpen(!open)}
+          onChange={handleChange}
+          defaultValue={
+            currentBoard.Status.find((val) => val.id === selectedStatus)?.id
+          }>
+          {currentBoard.Status.map((val) => (
+            <option key={val.id} value={val.id}>
+              {val.name}
+            </option>
+          ))}
+        </select>
+      )}
     </div>
   );
 };

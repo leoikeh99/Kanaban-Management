@@ -2,17 +2,15 @@
 import React, { useContext } from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
-import BoardIcon from "@/public/assets/icon-board.svg";
 import HideIcon from "@/public/assets/icon-hide-sidebar.svg";
-import IconLight from "@/public/assets/icon-light-theme.svg";
-import IconDark from "@/public/assets/icon-dark-theme.svg";
-import Link from "next/link";
-import ModalContext from "@/context/ModalContext";
 import AuthHandler from "../Auth/AuthHandler";
 import SettingsContext from "@/context/SettingsContext";
+import UserContext from "@/context/UserContext";
+import Boards from "./Boards";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const Sidebar = () => {
-  const { toggleModal } = useContext(ModalContext);
+  const { boards } = useContext(UserContext);
   const { theme, hideSidebar, toggleTheme, toggleSidebar } =
     useContext(SettingsContext);
 
@@ -27,36 +25,12 @@ const Sidebar = () => {
           alt="logo-dark"
         />
       </div>
-      <p className={styles.title}>ALL BOARDS (3)</p>
-      <div className={styles.boards}>
-        <Link href="/1" className={`${styles.active}`}>
-          <BoardIcon />
-          Platform Launch
-        </Link>
-        <Link href="/1">
-          <BoardIcon />
-          Marketing Plan
-        </Link>
-        <Link href="/1">
-          <BoardIcon />
-          Roadmap
-        </Link>
-        <button className={styles.btn} onClick={() => toggleModal("Add Board")}>
-          <BoardIcon />+ Create New Board
-        </button>
-      </div>
+      <p className={styles.title}>{`ALL BOARDS (${boards.length})`}</p>
+      <Boards />
+
       <div className={styles.bottomSection}>
         <AuthHandler />
-        <div className={styles.themeSwitcher}>
-          <IconLight />
-          <button
-            className={`${styles.toggleSwitch} ${
-              theme === "light" ? styles.light : styles.dark
-            }`}
-            onClick={() => toggleTheme()}
-          />
-          <IconDark />
-        </div>
+        <ThemeSwitcher />
         <button className={styles.hideBtn} onClick={() => toggleSidebar()}>
           <HideIcon /> Hide Sidebar
         </button>
