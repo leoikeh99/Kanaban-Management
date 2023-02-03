@@ -10,7 +10,7 @@ const Column = ({ status, index }: { status: Status; index: number }) => {
     <div className={styles.column}>
       <h5>
         <span style={{ background: colors.colorCodes[index] }} />
-        {status.name}
+        {status.name.toLocaleUpperCase()}
       </h5>
       {status.Task.sort((a, b) => a.rank - b.rank).map((task) => (
         <Task key={task.id} task={task} />
