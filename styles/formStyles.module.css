@@ -123,6 +123,10 @@ input.error {
   background: var(--red-hover);
 }
 
+.secondary svg path {
+  fill: var(--main-purple);
+}
+
 .form small {
   color: var(--medium-grey);
   font-weight: 500;

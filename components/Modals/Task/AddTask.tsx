@@ -14,7 +14,11 @@ import { validateTask } from "app/utils";
 const AddTask = () => {
   const { toggleModal } = useContext(ModalContext);
   const { currentBoard, addTask } = useContext(UserContext);
-  const [_response, setRepsonse] = useState({ loading: false, error: null });
+  const [_response, setRepsonse] = useState({
+    loading: false,
+    loading2: false,
+    error: null,
+  });
   const [errors, setErrors] = useState<ValidateTaskErrors>([]);
   const [data, setData] = useState({
     title: "",
@@ -89,6 +93,45 @@ const AddTask = () => {
       subtasks: data.subtasks.filter((val) => val.id !== id),
     });
 
+  const generateRandom = async () => {
+    if (_response.loading2) return;
+    setRepsonse({ ..._response, loading2: true });
+
+    await fetch(`/api/tasks/generateRandom`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ data: { boardName: currentBoard?.name } }),
+    })
+      .then(async (res) => {
+        if (!res.ok) {
+          const text = await res.text();
+          throw Error(text);
+        }
+
+        await res.json().then((response) => {
+          setRepsonse({ ..._response, loading2: false });
+          setData({
+            ...data,
+            title: response.title,
+            description: response.description,
+            subtasks: response.subtasks.map((subtask: string) => {
+              return {
+                name: subtask,
+                id: uuidv4(),
+              };
+            }),
+          });
+        });
+      })
+      .catch((err) => {
+        const error = JSON.parse(err.message);
+        setRepsonse({ ..._response, loading2: false, error: error.message });
+        setTimeout(() => setRepsonse({ ..._response, error: null }), 3000);
+      });
+  };
+
   return (
     <>
       <div className={styles.overlay} onClick={() => toggleModal(null)} />
@@ -149,6 +192,7 @@ const AddTask = () => {
                   </button>
                 </div>
               ))}
+
               <button
                 type="button"
                 className={`${formStyles.btn} ${formStyles.secondary}`}
@@ -163,6 +207,14 @@ const AddTask = () => {
                 handleChange={handleChange}
               />
             </div>
+            <button
+              type="button"
+              className={`${formStyles.btn} ${formStyles.secondary}`}
+              onClick={() => generateRandom()}>
+              {_response.loading2 && <Loader />}
+              Generate random
+            </button>
+            <br />
             <button
               type="submit"
               className={`${formStyles.btn} ${formStyles.primary}`}>
