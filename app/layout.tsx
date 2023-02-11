@@ -7,6 +7,15 @@ import prisma from "@/lib/prisma";
 import ShowAuthModals from "@/components/Modals/ShowAuthModals";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { Plus_Jakarta_Sans } from "@next/font/google";
+
+const plus_jakarta = Plus_Jakarta_Sans({
+  weight: ["500", "700"],
+  style: ["normal"],
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+});
 
 export default async function RootLayout({
   children,
@@ -42,7 +51,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className="light">
       <head />
-      <body>
+      <body className={plus_jakarta.variable}>
         <Providers boards={user?.boards}>
           <Header />
           <Sidebar />

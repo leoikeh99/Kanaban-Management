@@ -60,7 +60,7 @@ body {
   padding: 0;
   margin: 0;
   background: var(--bg-primary);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-plus-jakarta);
 }
 
 * {
@@ -68,7 +68,7 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color ease-in 0.05s;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-plus-jakarta);
 }
 
 .layout {
