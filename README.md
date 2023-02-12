@@ -1,34 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kanban task management web app
 
-## Getting Started
+Introducing the ultimate Kanban management app, designed to help you visualize and organize your workflow with ease! Our app is a comprehensive solution for teams and individuals who want to streamline their work processes and increase productivity. With a user-friendly interface and intuitive features, our app makes it easy to create boards, add tasks, and move items through the stages of your workflow.
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### The challenge
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Users should be able to:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Create, read, update, and delete boards and tasks
+- Receive form validations when trying to create/edit boards and tasks
+- Mark subtasks as complete and move tasks between columns
+- Hide/show the board sidebar
+- Toggle the theme between light/dark modes
+- **Bonus**: Allow users to drag and drop tasks to change their status and re-order them in a column
+- **Bonus**: Keep track of any changes, even after refreshing the browser (`localStorage` could be used for this if you're not building out a full-stack app)
+- **Bonus**: Build this project as a full-stack application
 
-## Learn More
+### Screenshot
 
-To learn more about Next.js, take a look at the following resources:
+![Light Mode](./screenshots/lightmode.png)
+![Dark Mode](./screenshots/darkmode.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Links
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [https://kanaban-management.vercel.app/](https://kanaban-management.vercel.app/)
 
-## Deploy on Vercel
+## My process
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Built with
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js](https://nextjs.org/)
+- [CSS Modules](https://github.com/css-modules/css-modules) - For styles
+- [NextAuth](https://next-auth.js.org/) - Handling authentication
+- [Prisma](https://www.prisma.io/) - ORM
+- [Postgresql](https://www.postgresql.org/) - Database
+
+### What I learned
+
+An interesting project all together, this was my first time using Prisma orm and also postgresql, I definitely learn a lot about sql databases and how the function. This was also my first time trying the app directory in the latest Nextjs13, other than the aforementioned technologies I guess I'll also add the use of Reacts drag and drop API was quite interesting, not to forget I also used Open AI's text generation too to automate a little feature in this project.
+
+### Continued development
+
+In the future I hope to continue learning and working a lot with sql databases.
+
+### Useful resources
+
+- [NextJs 13 docs](https://beta.nextjs.org/docs) - This helped me a lot when working with NextJs new app dir.
+
+## Author
+
+- Website - [Leonard Ikeh](https://leonardikeh.netlify.app/)
+- Frontend Mentor - [@leoikeh99](https://www.frontendmentor.io/profile/leoikeh99)
+- Twitter - [@wazza_dev](https://www.twitter.com/wazza_dev)
