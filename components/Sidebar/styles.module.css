@@ -57,6 +57,14 @@
   text-overflow: ellipsis;
 }
 
+.boards a span {
+  display: inline-block;
+  max-width: 210px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .btn {
   color: var(--main-purple);
 }

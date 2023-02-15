@@ -41,7 +41,7 @@ const Boards = () => {
             }`}
             key={board.id}>
             <BoardIcon />
-            {board.name}
+            <span>{board.name}</span>
           </Link>
         ))
       ) : null}
